@@ -488,8 +488,8 @@ The output must:
 
 See the `examples/` directory for complete templates:
 
-- [switch-button.html](https://raw.githubusercontent.com/eoh-jsc/era-iframe-widget-skill/main/examples/switch-button.html) - Modern toggle switch
-- [value-display.html](https://raw.githubusercontent.com/eoh-jsc/era-iframe-widget-skill/main/examples/value-display.html) - Sensor value card
-- [gauge.html](https://raw.githubusercontent.com/eoh-jsc/era-iframe-widget-skill/main/examples/gauge.html) - Circular gauge meter
-- [multi-toggle.html](https://raw.githubusercontent.com/eoh-jsc/era-iframe-widget-skill/main/examples/multi-toggle.html) - Multiple toggles
-- [control-panel.html](https://raw.githubusercontent.com/eoh-jsc/era-iframe-widget-skill/main/examples/control-panel.html) - Full dashboard
+- [switch-button.html](https://raw.githubusercontent.com/eoh-jsc/era-iframe-widget-skill/refs/heads/main/examples/switch-button.html) - Modern toggle switch
+- [value-display.html](https://raw.githubusercontent.com/eoh-jsc/era-iframe-widget-skill/refs/heads/main/examples/value-display.html) - Sensor value card
+- [gauge.html](https://raw.githubusercontent.com/eoh-jsc/era-iframe-widget-skill/refs/heads/main/examples/gauge.html) - Circular gauge meter
+- [multi-toggle.html](https://raw.githubusercontent.com/eoh-jsc/era-iframe-widget-skill/refs/heads/main/examples/multi-toggle.html) - Multiple toggles
+- [control-panel.html](https://raw.githubusercontent.com/eoh-jsc/era-iframe-widget-skill/refs/heads/main/examples/control-panel.html) - Full dashboard

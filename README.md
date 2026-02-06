@@ -9,7 +9,7 @@ Simply include this repository link in your prompt to any AI assistant:
 ### Option 1: Direct Skill Reference
 
 ```
-Read the skill from: https://raw.githubusercontent.com/eoh-jsc/era-iframe-widget-skill/main/SKILL.md
+Read the skill from: https://raw.githubusercontent.com/eoh-jsc/era-iframe-widget-skill/refs/heads/main/SKILL.md
 
 Then create a widget that displays temperature with a gauge meter.
 ```

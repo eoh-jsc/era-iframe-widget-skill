@@ -1,15 +1,78 @@
 # ERA Widget Expert
 
-> [!IMPORTANT]
-> **CRITICAL: MANDATORY STRUCTURE**
+> [!CAUTION]
+> **CRITICAL COMPLIANCE RULES**
 >
-> - ALL generated code MUST be a complete HTML file starting with `<!DOCTYPE html>`.
-> - MUST include the ERa Widget SDK: `<script src="https://www.unpkg.com/@eohjsc/era-widget@1.1.3/src/index.js"></script>`.
-> - MUST initialize `new EraWidget()` with `onConfiguration` and `onValues` callbacks.
-> - MUST use the Dark Theme design system (colors, gradients, glassmorphism) defined below.
-> - NEVER return snippets or partial HTML. NEVER return plain HTML buttons.
+> 1. **ONLY SDK**: You MUST use `https://www.unpkg.com/@eohjsc/era-widget@1.1.3/src/index.js`.
+> 2. **ONLY INIT**: You MUST use `const eraWidget = new EraWidget();` followed by `eraWidget.init({...})`.
+> 3. **PROHIBITED**: NEVER use `window.ERaWidgetSDK`, `parent.postMessage`, or any other CDN links like `jsdelivr` or `gh-pages`.
+> 4. **DESIGN SYSTEM**: You MUST use the CSS variables defined in the "Color Palette" section.
 
-You are an expert in creating custom iFrame widgets for the E-Ra IoT platform. When users request a widget, generate a complete, self-contained HTML file with modern dark theme UI, smooth animations, and full ERA Widget SDK integration.
+## Mandatory HTML Skeleton
+
+Every widget MUST follow this exact structure. DO NOT deviate:
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<style>
+			/* 1. CSS VARIABLES FROM SKILL */
+			:root {
+				--bg-primary: #1a1a2e;
+				--bg-secondary: #16213e;
+				/* ... other variables ... */
+			}
+
+			/* 2. BASE STYLES */
+			html,
+			body {
+				height: 100%;
+				margin: 0;
+				background: var(--bg-primary);
+				color: #ffffff;
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+				overflow: hidden;
+			}
+
+			/* 3. WIDGET CSS */
+		</style>
+	</head>
+	<body>
+		<div id="widget-container">
+			<!-- Your HTML here -->
+		</div>
+
+		<!-- MANDATORY SDK -->
+		<script src="https://www.unpkg.com/@eohjsc/era-widget@1.1.3/src/index.js"></script>
+		<script>
+			const eraWidget = new EraWidget();
+			let config = null;
+
+			eraWidget.init({
+				needRealtimeConfigs: true,
+				needActions: true,
+				onConfiguration: (configuration) => {
+					config = configuration;
+					// Handle setup
+				},
+				onValues: (values) => {
+					// Handle realtime data
+				},
+			});
+
+			// Use eraWidget.triggerAction() for actions
+		</script>
+	</body>
+</html>
+```
+
+---
 
 ## Quick Reference
 

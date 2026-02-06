@@ -38,20 +38,18 @@ Use https://github.com/eoh-jsc/era-iframe-widget-skill to create a switch button
 - **Switch Button** - Toggle ON/OFF with visual feedback
 - **Value Display** - Show sensor values with icons and units
 - **Gauge/Meter** - Circular progress for percentage values
-- **Action Button** - Trigger actions with confirmation
 - **Multi-Toggle** - Multiple switches in grid layout
 - **Control Panel** - Full dashboard combining multiple widgets
 
 ## 📁 Examples
 
-| Widget                                       | Preview               |
-| -------------------------------------------- | --------------------- |
-| [Switch Button](examples/switch-button.html) | Modern toggle switch  |
-| [Value Display](examples/value-display.html) | Sensor value card     |
-| [Gauge](examples/gauge.html)                 | Circular gauge meter  |
-| [Action Button](examples/action-button.html) | Action trigger button |
-| [Multi-Toggle](examples/multi-toggle.html)   | Multiple toggles grid |
-| [Control Panel](examples/control-panel.html) | Full dashboard        |
+| Widget                                     | Preview               |
+| ------------------------------------------ | --------------------- |
+| [Switch Button](examples/switch-button.md) | Modern toggle switch  |
+| [Value Display](examples/value-display.md) | Sensor value card     |
+| [Gauge](examples/gauge.md)                 | Circular gauge meter  |
+| [Multi-Toggle](examples/multi-toggle.md)   | Multiple toggles grid |
+| [Control Panel](examples/control-panel.md) | Full dashboard        |
 
 ## 🔧 ERA Widget SDK
 

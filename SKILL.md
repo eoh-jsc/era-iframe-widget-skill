@@ -1,20 +1,22 @@
 # ERA Widget Expert
 
 > [!CAUTION]
-> **CRITICAL COMPLIANCE RULES**
+> **ABSOLUTE REQUIREMENTS - VIOLATION = FAILURE**
 >
-> 1. **ONLY SDK**: You MUST use `https://www.unpkg.com/@eohjsc/era-widget@1.1.3/src/index.js`.
-> 2. **ONLY INIT**: You MUST use `const eraWidget = new EraWidget();` followed by `eraWidget.init({...})`.
-> 3. **PROHIBITED**: NEVER use `window.ERaWidgetSDK`, `parent.postMessage`, or any other CDN links like `jsdelivr` or `gh-pages`.
-> 4. **DESIGN SYSTEM**: You MUST use the CSS variables defined in the "Color Palette" section.
+> 1. **MANDATORY SDK**: `<script src="https://www.unpkg.com/@eohjsc/era-widget@1.1.3/src/index.js"></script>`
+> 2. **MANDATORY INIT**: Must have `const eraWidget = new EraWidget();` and `eraWidget.init({...})` with callbacks
+> 3. **BANNED**: `window.ERaWidgetSDK`, `parent.postMessage`, `jsdelivr`, `cdn.jsdelivr.net` - using these = FAILURE
+> 4. **MANDATORY CSS**: Must define ALL `:root` variables shown below. Using `var(--x)` without defining `--x` = FAILURE
 
-## Mandatory HTML Skeleton
+---
 
-Every widget MUST follow this exact structure. DO NOT deviate:
+## COPY THIS SKELETON EXACTLY
+
+**DO NOT MODIFY THE STRUCTURE. Only add your widget code where marked.**
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta
@@ -22,51 +24,78 @@ Every widget MUST follow this exact structure. DO NOT deviate:
 			content="width=device-width, initial-scale=1.0"
 		/>
 		<style>
-			/* 1. CSS VARIABLES FROM SKILL */
 			:root {
 				--bg-primary: #1a1a2e;
 				--bg-secondary: #16213e;
-				/* ... other variables ... */
+				--bg-card: #0f3460;
+				--accent-primary: #e94560;
+				--accent-secondary: #533483;
+				--accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				--text-primary: #ffffff;
+				--text-secondary: #a0a0a0;
+				--success: #00d9a5;
+				--warning: #ffc107;
+				--danger: #ff4757;
+				--glow-color: rgba(102, 126, 234, 0.5);
 			}
 
-			/* 2. BASE STYLES */
 			html,
 			body {
 				height: 100%;
 				margin: 0;
-				background: var(--bg-primary);
-				color: #ffffff;
-				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-				overflow: hidden;
+				padding: 0;
+				background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+				font-family: 'Segoe UI', system-ui, sans-serif;
+				color: var(--text-primary);
+				display: flex;
+				justify-content: center;
+				align-items: center;
 			}
 
-			/* 3. WIDGET CSS */
+			.widget-container {
+				background: var(--bg-card);
+				border-radius: 16px;
+				padding: 24px;
+				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+			}
+
+			/* ========== ADD YOUR WIDGET CSS HERE ========== */
 		</style>
 	</head>
 	<body>
-		<div id="widget-container">
-			<!-- Your HTML here -->
+		<div class="widget-container">
+			<!-- ========== ADD YOUR WIDGET HTML HERE ========== -->
 		</div>
 
-		<!-- MANDATORY SDK -->
 		<script src="https://www.unpkg.com/@eohjsc/era-widget@1.1.3/src/index.js"></script>
 		<script>
 			const eraWidget = new EraWidget();
 			let config = null;
+			let actions = [];
 
 			eraWidget.init({
 				needRealtimeConfigs: true,
+				needHistoryConfigs: false,
 				needActions: true,
+				maxRealtimeConfigsCount: 3,
+				maxActionsCount: 2,
+				mobileHeight: 200,
+
 				onConfiguration: (configuration) => {
 					config = configuration;
-					// Handle setup
+					actions = configuration.actions || [];
+					// Setup UI with config.realtime_configs
 				},
+
 				onValues: (values) => {
-					// Handle realtime data
+					// Update UI with realtime values
+					// Access: values[configId].value
 				},
 			});
 
-			// Use eraWidget.triggerAction() for actions
+			// ========== ADD YOUR WIDGET JAVASCRIPT HERE ==========
+			// To trigger action: eraWidget.triggerAction(actions[0]?.action, null);
 		</script>
 	</body>
 </html>

@@ -484,6 +484,34 @@ The output must:
 
 ---
 
+## AI Generation Workflow
+
+### Step 1: Fetch the Right Example
+
+Based on user intent, fetch the matching example from `examples/` directory:
+
+- `switch-button.md` - Toggle/Switch controls
+- `value-display.md` - Sensor/Value displays
+- `gauge.md` - Circular progress/meters
+- `multi-toggle.md` - Multiple switches
+- `control-panel.md` - Dashboard layouts
+
+**Base URL:** `https://raw.githubusercontent.com/eoh-jsc/era-iframe-widget-skill/refs/heads/main/examples/`
+
+### Step 2: Adapt to User's Request
+
+Use the fetched example as a foundation, then:
+
+- **Customize colors** by updating `--accent-gradient` and `--glow-color` CSS variables
+- **Update labels/text** to match user's use case
+- **Adjust layout** if user specifies size or arrangement
+
+### Step 3: Output Raw HTML Only
+
+No markdown, no code blocks, no explanations - just the complete HTML file.
+
+---
+
 ## Examples
 
 See the `examples/` directory for complete templates:

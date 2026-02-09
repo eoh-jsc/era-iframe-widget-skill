@@ -28,10 +28,11 @@ Use https://github.com/eoh-jsc/era-iframe-widget-skill to create a switch button
 
 ## 📦 What's Included
 
-| File        | Description                                                                   |
-| ----------- | ----------------------------------------------------------------------------- |
-| `SKILL.md`  | Complete skill instructions with SDK reference, design system, and guidelines |
-| `examples/` | 6 ready-to-use widget templates                                               |
+| File               | Description                                                                   |
+| ------------------ | ----------------------------------------------------------------------------- |
+| `SKILL.md`         | Complete skill instructions with SDK reference, design system, and guidelines |
+| `SYSTEM_PROMPT.md` | All-in-One system prompt for API integration (OpenAI, Django, etc.)           |
+| `examples/`        | 6 ready-to-use widget templates                                               |
 
 ## 🎨 Widget Types
 
